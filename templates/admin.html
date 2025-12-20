@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Gurukul</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Gurukul Admin</h2>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-link active" data-tab="blog">📝 Manage Blog</a>
+                <a href="#" class="admin-nav-link" data-tab="gallery">🖼️ Manage Gallery</a>
+                <a href="" class="admin-nav-link">🏠 Back to Website</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <!-- Blog Management -->
+            <div id="blogTab" class="admin-tab active">
+                <div class="admin-header">
+                    <h1>Manage Blog Posts</h1>
+                    <button class="btn btn-primary" id="addBlogBtn">+ Add New Post</button>
+                </div>
+
+                <div id="blogForm" class="admin-form" style="display: none;">
+                    <h2 id="blogFormTitle">Add New Blog Post</h2>
+                    <form id="blogPostForm">
+                        <input type="hidden" id="blogId">
+                        <div class="form-group">
+                            <label for="blogTitle">Title *</label>
+                            <input type="text" id="blogTitle" name="blogTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogAuthor">Author *</label>
+                            <input type="text" id="blogAuthor" name="blogAuthor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogImage">Image URL *</label>
+                            <input type="url" id="blogImage" name="blogImage" placeholder="https://example.com/image.jpg" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogExcerpt">Excerpt *</label>
+                            <textarea id="blogExcerpt" name="blogExcerpt" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogContent">Content *</label>
+                            <textarea id="blogContent" name="blogContent" rows="8" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Post</button>
+                            <button type="button" class="btn btn-secondary" id="cancelBlogBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="admin-table">
+                    <table id="blogTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="blogTableBody">
+                            <!-- Blog posts will be loaded here -->
+                        </tbody>
+                    </table>
+                    <div id="noBlogPosts" class="empty-state" style="display: none;">
+                        <p>No blog posts yet. Add your first post!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Management -->
+            <div id="galleryTab" class="admin-tab">
+                <div class="admin-header">
+                    <h1>Manage Gallery</h1>
+                    <button class="btn btn-primary" id="addGalleryBtn">+ Add New Image</button>
+                </div>
+
+                <div id="galleryForm" class="admin-form" style="display: none;">
+                    <h2 id="galleryFormTitle">Add New Image</h2>
+                    <form id="galleryImageForm">
+                        <input type="hidden" id="galleryId">
+                        <div class="form-group">
+                            <label for="galleryImageUrl">Image URL *</label>
+                            <input type="url" id="galleryImageUrl" name="galleryImageUrl" placeholder="https://example.com/image.jpg" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="galleryCaption">Caption *</label>
+                            <input type="text" id="galleryCaption" name="galleryCaption" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="galleryCategory">Category</label>
+                            <select id="galleryCategory" name="galleryCategory">
+                                <option value="Events">Events</option>
+                                <option value="Campus">Campus</option>
+                                <option value="Students">Students</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Cultural">Cultural</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Image</button>
+                            <button type="button" class="btn btn-secondary" id="cancelGalleryBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="admin-gallery-grid" id="adminGalleryGrid">
+                    <!-- Gallery images will be loaded here -->
+                </div>
+                <div id="noGalleryImages" class="empty-state" style="display: none;">
+                    <p>No images in gallery yet. Add your first image!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

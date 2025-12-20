@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Gurukul</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <!-- Updated logo path and school name -->
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                        class="logo-img">
+                    <span class="logo-text">G.P.S.</span>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a class="active" href="admissions">Admissions</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="notice">Notice</a></li>
+                    <li><a href="alumni">Alumni</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Admissions</h1>
+            <p class="page-subtitle">Begin your journey with us</p>
+        </div>
+    </section>
+
+    <!-- Admission Info -->
+    <section class="admission-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Admission Process</h3>
+                    <ol>
+                        <li>Submit online application form</li>
+                        <li>Initial screening and review</li>
+                        <li>Entrance test (for grades 6 and above)</li>
+                        <li>Parent-student interaction</li>
+                        <li>Admission confirmation</li>
+                    </ol>
+                </div>
+                <div class="info-card">
+                    <h3>Required Documents</h3>
+                    <ul>
+                        <li>Birth certificate</li>
+                        <li>Previous school records</li>
+                        <li>Transfer certificate (if applicable)</li>
+                        <li>Medical records</li>
+                        <li>Passport-size photographs</li>
+                        <li>Address proof</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Important Dates</h3>
+                    <ul>
+                        <li><strong>Application Start:</strong> December 1, 2024</li>
+                        <li><strong>Application End:</strong> February 28, 2025</li>
+                        <li><strong>Entrance Test:</strong> March 15-20, 2025</li>
+                        <li><strong>Results:</strong> March 30, 2025</li>
+                        <li><strong>Session Start:</strong> April 10, 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="form-title">Application Form</h2>
+                <form id="admissionForm" class="admission-form">
+                    <div class="form-section">
+                        <h3 class="form-section-title">Student Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dob">Date of Birth *</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="class">Grade Applying For *</label>
+                                <select id="class" name="class" required>
+                                    <option value="">Select Grade</option>
+                                    <option value="nursery">Nursery</option>
+                                    <option value="kg">Kindergarten</option>
+                                    <option value="1">Grade 1</option>
+                                    <option value="2">Grade 2</option>
+                                    <option value="3">Grade 3</option>
+                                    <option value="4">Grade 4</option>
+                                    <option value="5">Grade 5</option>
+                                    <option value="6">Grade 6</option>
+                                    <option value="7">Grade 7</option>
+                                    <option value="8">Grade 8</option>
+                                    <option value="9">Grade 9</option>
+                                    <option value="10">Grade 10</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="previousSchool">Previous School</label>
+                                <input type="text" id="previousSchool" name="previousSchool">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">Parent/Guardian Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parentName">Parent/Guardian Name *</label>
+                                <input type="text" id="parentName" name="parentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship *</label>
+                                <select id="relationship" name="relationship" required>
+                                    <option value="">Select Relationship</option>
+                                    <option value="father">Father</option>
+                                    <option value="mother">Mother</option>
+                                    <option value="guardian">Guardian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">Additional Information</h3>
+                        <div class="form-group">
+                            <label for="message">Any special requirements or comments</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Gurukul</h3>
+                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="admissions">Admissions</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="notice">Notice Board</a></li>
+                        <li><a href="alumni">Alumni</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="admin">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/admission.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni - Gurukul</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <!-- Updated logo path and school name -->
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                        class="logo-img">
+                    <span class="logo-text">G.P.S.</span>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="admissions">Admissions</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="notice">Notice</a></li>
+                    <li><a href="alumni" class="active">Alumni</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Alumni Network</h1>
+            <p class="page-subtitle">Once a Gurukul student, always a family member</p>
+        </div>
+    </section>
+
+    <!-- Alumni Content -->
+    <section class="alumni-section">
+        <div class="container">
+            <div class="alumni-intro">
+                <h2>Join Our Alumni Community</h2>
+                <p>Our alumni network is a testament to the quality education and values instilled at Gurukul. From doctors and engineers to entrepreneurs and artists, our graduates have made their mark in diverse fields across the globe.</p>
+            </div>
+
+            <div class="alumni-benefits">
+                <h2 class="section-title">Alumni Benefits</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h3>Networking Opportunities</h3>
+                        <p>Connect with fellow alumni through exclusive events, reunions, and online platforms</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Career Support</h3>
+                        <p>Access job opportunities, mentorship programs, and career guidance from successful alumni</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Lifelong Learning</h3>
+                        <p>Participate in workshops, seminars, and continuing education programs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Give Back</h3>
+                        <p>Contribute to scholarships, mentor current students, and support school initiatives</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alumni-testimonials">
+                <h2 class="section-title">Alumni Voices</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Gurukul shaped not just my academic foundation but also my character. The values I learned here continue to guide me in my medical practice."</p>
+                        <div class="testimonial-author">
+                            <strong>Dr. Priya Sharma</strong>
+                            <span>Class of 2010, Cardiologist</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The holistic education I received at Gurukul prepared me for the real world. I'm grateful for the teachers who believed in me."</p>
+                        <div class="testimonial-author">
+                            <strong>Rahul Verma</strong>
+                            <span>Class of 2008, Software Engineer</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Gurukul taught me to dream big and work hard. Today, as an entrepreneur, I carry those lessons with me every day."</p>
+                        <div class="testimonial-author">
+                            <strong>Ananya Patel</strong>
+                            <span>Class of 2012, Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alumni-register">
+                <h2 class="section-title">Register as Alumni</h2>
+                <form id="alumniForm" class="alumni-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alumniName">Full Name *</label>
+                            <input type="text" id="alumniName" name="alumniName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="graduationYear">Graduation Year *</label>
+                            <input type="number" id="graduationYear" name="graduationYear" min="1998" max="2024" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alumniEmail">Email *</label>
+                            <input type="email" id="alumniEmail" name="alumniEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alumniPhone">Phone Number *</label>
+                            <input type="tel" id="alumniPhone" name="alumniPhone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="currentProfession">Current Profession *</label>
+                            <input type="text" id="currentProfession" name="currentProfession" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Organization/Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Share your journey (optional)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Gurukul</h3>
+                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="admissions">Admissions</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="notice">Notice Board</a></li>
+                        <li><a href="alumni">Alumni</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="admin">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/alumni.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Gyanodhya Public School</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <!-- Updated logo path and school name -->
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                        class="logo-img">
+                    <span class="logo-text">G.P.S.</span>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="admissions">Admissions</a></li>
+                    <li><a href="gallery" class="active">Gallery</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="notice">Notice</a></li>
+                    <li><a href="alumni">Alumni</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Gallery</h1>
+            <p class="page-subtitle">Moments that define our journey</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <!-- Hardcoded gallery images instead of loading from localStorage -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('/images/main-20image.jpeg', 'School Campus View')">
+                    <img src="/static/images/main-20image.jpeg" alt="School Campus View">
+                    <div class="gallery-caption">
+                        <h3>School Campus View</h3>
+                        <p>Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/science-exhibition.png', 'Science Exhibition')">
+                    <img src="/static/public/science-exhibition.png" alt="Science Exhibition">
+                    <div class="gallery-caption">
+                        <h3>Science Exhibition</h3>
+                        <p>Events</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/parent-teacher-meeting-school.jpg', 'Parent-Teacher Meeting')">
+                    <img src="/static/public/parent-teacher-meeting-school.jpg" alt="Parent-Teacher Meeting">
+                    <div class="gallery-caption">
+                        <h3>Parent-Teacher Meeting</h3>
+                        <p>Events</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/children-doing-yoga-school.jpg', 'Yoga & Wellness')">
+                    <img src="/static/public/children-doing-yoga-school.jpg" alt="Yoga & Wellness">
+                    <div class="gallery-caption">
+                        <h3>Yoga & Wellness</h3>
+                        <p>Activities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/students-celebrating-success.jpg', 'Student Achievements')">
+                    <img src="/static/public/students-celebrating-success.jpg" alt="Student Achievements">
+                    <div class="gallery-caption">
+                        <h3>Student Achievements</h3>
+                        <p>Celebrations</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/school-classroom-students-learning.jpg', 'Interactive Classrooms')">
+                    <img src="/static/public/school-classroom-students-learning.jpg" alt="Interactive Classrooms">
+                    <div class="gallery-caption">
+                        <h3>Interactive Classrooms</h3>
+                        <p>Learning</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/school-library-students-reading.jpg', 'Library Facilities')">
+                    <img src="/static/public/school-library-students-reading.jpg" alt="Library Facilities">
+                    <div class="gallery-caption">
+                        <h3>Library Facilities</h3>
+                        <p>Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/school-sports-day.jpg', 'Sports Day')">
+                    <img src="/static/public/school-sports-day.jpg" alt="Sports Day">
+                    <div class="gallery-caption">
+                        <h3>Sports Day</h3>
+                        <p>Sports & Activities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('public/school-computer-lab.jpg', 'Computer Lab')">
+                    <img src="/static/public/school-computer-lab.jpg" alt="Computer Lab">
+                    <div class="gallery-caption">
+                        <h3>Computer Lab</h3>
+                        <p>Infrastructure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Gyanodhya Public School</h3>
+                    <p class="footer-text">We teach with love & care - Developing body, mind & soul</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="admissions">Admissions</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="notice">Notice Board</a></li>
+                        <li><a href="alumni">Alumni</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="admin">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-contact">Housing Board Colony<br>Dondekhurd, Raipur<br>Phone: 98932-08095<br>Phone: 91318-97047<br>Phone: 83494-30562</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gyanodhya Public School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/gallery.js"></script>
+</body>
+</html>
