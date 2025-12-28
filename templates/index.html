@@ -5,20 +5,44 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyanodhya Public School - We Teach With Love & Care</title>
+    <title>Gyanodaya Public School - We Teach With Love & Care</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/carousel.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
     <!-- Header -->
+    <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/media/{{maindata.logo}}" alt="Gyanodaya Public School Logo"
                         class="logo-img">
-                    <span class="logo-text">G.P.S.</span>
+                    <span class="logo-text">{{maindata.Header}}</span>
                 </div>
                 <button class="mobile-toggle" id="mobileToggle">
                     <span></span>
@@ -30,11 +54,10 @@
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                    {% comment %} <li><a href="blog" class="active">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,54 +66,256 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay"></div>
-        <!-- Added main school image as hero background -->
-        <img src="/static/images/main-20image.jpeg" alt="Gyanodhya Public School" class="hero-bg">
+
+        {% comment %} <img src="/static/images/main-20image.jpeg" alt="Gyanodaya Public School" class="hero-bg">
+        {%endcomment %}
+        <video class="hero-bg" src="/media/{{data.Hero_video}}" autoplay muted></video>
         <div class="container hero-content">
-            <!-- Updated hero content with school specific information -->
-            <h1 class="hero-title">Gyanodhya Public School</h1>
+
+            <h1 class="hero-title">Gyanodaya Public School</h1>
             <p class="hero-subtitle">We Teach With Love & Care - Nursery to Class 8th</p>
             <p class="hero-location">Housing Board Colony, Dondekhurd, Raipur</p>
             <div class="hero-actions">
-                <a href="admissions" class="btn btn-primary">Apply Now - Session 2025-26</a>
+                <a href="admissions" class="btn btn-primary">Apply Now - Session {{maindata.session_year}}</a>
                 <a href="about" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
+    </section>
+
+    <!-- floating social icons -->
+
+    <div class="floating-items">
+        <ul>
+            <li><img class="image-Icon-social-float" id="whatsappbtn" src="/static/public/icons/whatsapp.png" alt="">
+            </li>
+            <li><img class="image-Icon-social-float" id="emailBtn" src="/static/public/icons/gmail.png" alt=""></li>
+            <li><img class="image-Icon-social-float" id="callBtn" src="/static/public/icons/phone2.png" alt=""></li>
+        </ul>
+    </div>
+
+    <!-- About section  -->
+
+    <section class="about-section">
+        <div class="section-header-2">
+            <h2 class="section-title">About us</h2>
+        </div>
+        <div class="main-sec-about">
+            <div class="section-image">
+                <img src="/media/{{data.About_Image}}" alt="">
+            </div>
+            <div class="section-text">
+                <p class="feature-text">
+                    {{data.About_Text}}
+                </p>
+                <a href="/about" class="btn-get-quote">
+                    Read more
+                    <img class="icon" src="/static/images/icon/right-arrow.png" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- <div class="container-sm-btn">
+            
+        </div> -->
     </section>
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose Gyanodhya Public School</h2>
+                <h2 class="section-title">Why Choose Gyanodaya Public School</h2>
                 <p class="section-subtitle">A place for developing body, mind & soul through comprehensive education</p>
             </div>
             <div class="features-grid">
+            {% for data in choose %}
                 <div class="feature-card">
-                    <div class="feature-number">1</div>
-                    <h3 class="feature-title">Love & Care</h3>
-                    <p class="feature-text">We teach with love and care, ensuring every child feels valued and supported
-                        in their learning journey</p>
+                    <div class="feature-number">{{data.id}}</div>
+                    <h3 class="feature-title">{{data.title}}</h3>
+                    <p class="feature-text">{{data.text}}</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-number">2</div>
-                    <h3 class="feature-title">Holistic Development</h3>
-                    <p class="feature-text">Focus on developing body, mind & soul through academics, sports, and
-                        character building activities</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">3</div>
-                    <h3 class="feature-title">Modern Infrastructure</h3>
-                    <p class="feature-text">State-of-the-art three-story building with smart classrooms, labs, library,
-                        and sports facilities</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-number">4</div>
-                    <h3 class="feature-title">Experienced Mentors</h3>
-                    <p class="feature-text">Dedicated teachers and experienced mentors committed to nurturing each
-                        student's unique potential</p>
-                </div>
+                {% endfor %}
+
+                  
             </div>
         </div>
+    </section>
+
+    <!-- Student carousel -->
+
+    <!-- Using two carousels for large and small screens for better view -->
+
+    <section class="carousel-body">
+        <div class="carousel-container-2">
+            <!-- Added header section with title and subtitle -->
+            <div class="carousel-header-2">
+                <h1>Pride Of School</h1>
+                <p>Meet our talented students and their career success stories</p>
+            </div>
+
+            <!-- Restructured carousel with buttons beside the card instead of below -->
+            <div class="carousel-wrapper-2">
+                <button class="carousel-btn-2 prev-2">❮</button>
+
+                <div class="carousel-track-2">
+                    <!-- Slide 1 -->
+                    {% for data in carousel %}
+                    <div class="carousel-slide-2 active-2">
+
+                        <div class="student-card-2">
+                            <div class="card-image-2">
+                                <img src="/media/{{data.Image}}" alt="Sarah Johnson">
+                            </div>
+                            <div class="card-content-2">
+                                <div class="student-name-2">{{data.Title}}</div>
+                                <!-- <div class="student-title">Software Engineer</div> -->
+                                <!-- <div class="achievements">
+                                    <h3>Key Achievements</h3>
+                                    <ul>
+                                        <li>Interned at Google & Microsoft</li>
+                                        <li>Full-stack developer with 5+ projects</li>
+                                        <li>Open-source contributor</li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <button class="carousel-btn-2 next-2">❯</button>
+            </div>
+
+            <!-- Moved indicators below the carousel -->
+            <div class="carousel-indicators-2" id="dotsContainer-2">
+                {% for carousel in carousel %}
+                <div class="indicator-2"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="carousel-container">
+            <!-- Added header section with title and subtitle -->
+            <div class="carousel-header">
+                <h1>Pride Of School</h1>
+                <p>Meet our talented students and their career success stories</p>
+            </div>
+
+            <!-- Restructured carousel with buttons beside the card instead of below -->
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev">❮</button>
+
+                <div class="carousel-track">
+                    {% for group in grouped_carousel %}
+                    <div class="carousel-slide">
+                        {% for data in group %}
+                        {% if data %}
+                        <div class="student-card">
+                            <div class="card-image">
+                                <img src="/media/{{ data.Image }}" alt="{{ data.Title }}">
+                            </div>
+                            <div class="card-content">
+                                <div class="student-name">{{ data.Title }}</div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-btn next">❯</button>
+            </div>
+
+            <!-- Moved indicators below the carousel -->
+            <div class="carousel-indicators" id="dotsContainer">
+                {% for group in grouped_carousel %}
+                <div class="indicator"></div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </section>
+    <!-- section for gallery -->
+    <section class="carousel-body">
+        <div class="carousel-container-3">
+            <!-- Added header section with title and subtitle -->
+            <div class="carousel-header-3">
+                <h1>Video Gallery</h1>
+                <p>School activites with students</p>
+            </div>
+
+            <!-- Restructured carousel with buttons beside the card instead of below -->
+            <div class="carousel-wrapper-3">
+                <button class="carousel-btn-3 prev-3">❮</button>
+
+                <div class="carousel-track-3">
+                    <!-- Slide 1 -->
+                    {% for data in carousel %}
+                    <div class="carousel-slide-3 active-3">
+
+                        <div class="4">
+                            <iframe class="ytFrame-2" src="https://www.youtube.com/embed/3cZ7BmHQl2c?si=wolk3HfTc5xIFnFa"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <button class="carousel-btn-3 next-3">❯</button>
+            </div>
+
+            <!-- Moved indicators below the carousel -->
+            <div class="carousel-indicators-3" id="dotsContainer-3">
+                {% for carousel in carousel %}
+                <div class="indicator-3"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="carousel-container-4">
+            <!-- Added header section with title and subtitle -->
+            <div class="carousel-header-4">
+                <h1>Video Gallery</h1>
+                <p>School activites with students</p>
+            </div>
+
+            <!-- Restructured carousel with buttons beside the card instead of below -->
+            <div class="carousel-wrapper-4">
+                <button class="carousel-btn-4 prev-4">❮</button>
+
+                <div class="carousel-track-4">
+                    {% for group in grouped_carousel %}
+                    <div class="carousel-slide-4">
+                        {% for data in group %}
+                        {% if data %}
+                        <div class="student-card-4">
+                            <iframe class="ytFrame-2" src="https://www.youtube.com/embed/3cZ7BmHQl2c?si=wolk3HfTc5xIFnFa"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-btn next-4">❯</button>
+            </div>
+
+            <!-- Moved indicators below the carousel -->
+            <div class="carousel-indicators-4" id="dotsContainer-4">
+                {% for group in grouped_carousel %}
+                <div class="indicator-4"></div>
+                {% endfor %}
+            </div>
+
+        </div>
+
     </section>
 
     <!-- Stats Section -->
@@ -98,19 +323,19 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">15+</div>
+                    <div class="stat-number">{{data.years_of_excellence}}</div>
                     <div class="stat-label">Years of Excellence</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">800+</div>
+                    <div class="stat-number">{{data.Happy_Students}}</div>
                     <div class="stat-label">Happy Students</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">98%</div>
+                    <div class="stat-number">{{data.Success_Rate}}</div>
                     <div class="stat-label">Success Rate</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">35+</div>
+                    <div class="stat-number">{{data.Expert_Teachers}}</div>
                     <div class="stat-label">Expert Teachers</div>
                 </div>
             </div>
@@ -121,9 +346,9 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Admission Open for Session 2025-26</h2>
+                <h2 class="cta-title">Admission Open for Session {{maindata.session_year}}</h2>
                 <p class="cta-text">Join our community and experience quality education from Nursery to Class 8th</p>
-                <p class="cta-contact">Call: 98932-08095, 81318-87047, 83494-30562</p>
+                <p class="cta-contact">Call: {{maindata.mobile_primary}}, {{maindata.mobile_secondary}}</p>
                 <a href="admissions" class="btn btn-light">Start Application</a>
             </div>
         </div>
@@ -135,8 +360,8 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <!-- Updated footer with school branding -->
-                    <h3 class="footer-title">Gyanodhya Public School</h3>
-                    <p class="footer-text">Empowering future leaders through quality education with love and care</p>
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -144,32 +369,85 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
                     <!-- Updated contact information -->
-                    <p class="footer-contact">Housing Board Colony<br>Dondekhurd, Raipur<br>Phone: +91
-                        98932-08095<br>Phone: +91 81318-87047<br>Email: info@Gyanodhyapublicschool.com</p>
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gyanodhya Public School. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>
-
     <script src="/static/js/main.js"></script>
+    <script>
+        // Get Quote WhatsApp Button
+        const getQuoteBtn = document.getElementById("whatsappbtn")
+        if (getQuoteBtn) {
+            getQuoteBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                // Gyanda Public School WhatsApp number
+                const phoneNumber = `{{maindata.whats_app_mobile}}`
+                const message = "{{maindata.whatsapp_message}}"
+                const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+                window.open(whatsappURL, "_blank")
+            })
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault()
+                const target = document.querySelector(this.getAttribute("href"))
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    })
+                }
+            })
+        })
+
+
+        // Call Button
+        const callBtn = document.getElementById("callBtn")
+        if (callBtn) {
+            callBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                const phoneNumber = `{{maindata.mobile_primary}}`
+                const telURL = `tel:${phoneNumber}`
+                window.location.href = telURL
+            })
+        }
+
+        // Email Button
+        const emailBtn = document.getElementById("emailBtn")
+        if (emailBtn) {
+            emailBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                const recipient = `{{maindata.email_primary}}` 
+                const subject = `{{maindata.mail_message}}` 
+                console.log("here",subject)
+                const mailtoURL = `mailto:${recipient}?subject=${encodeURIComponent(subject)}`
+                window.location.href = mailtoURL
+            })
+        }
+
+
+
+    </script>
 </body>
 
 </html>

@@ -8,12 +8,34 @@
 </head>
 <body>
     <!-- Header -->
+     <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -22,16 +44,16 @@
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu" id="navMenu">
+                 <ul class="nav-menu" id="navMenu">
                     <li><a href="/" >Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                    {% comment %} <li><a href="blog" class="active">Blog</a></li> {% endcomment %}
                     <li><a href="notice" class="active">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment %}
                 </ul>
             </nav>
         </div>
@@ -49,42 +71,25 @@
     <section class="notice-section">
         <div class="container">
             <div class="notice-list">
+                {% for notice in notices %}
                 <div class="notice-item">
-                    <div class="notice-date">Dec 20, 2024</div>
-                    <h3 class="notice-title">Winter Break Schedule</h3>
-                    <p class="notice-content">School will remain closed for winter break from December 25, 2024 to January 5, 2025. Classes will resume on January 6, 2025.</p>
+                    <div class="notice-date">{{notice.date_time}}</div>
+                    <h3 class="notice-title">{{notice.Title}}</h3>
+                    <p class="notice-content">{{notice.descreption}}</p>
                 </div>
-                <div class="notice-item">
-                    <div class="notice-date">Dec 15, 2024</div>
-                    <h3 class="notice-title">Parent-Teacher Meeting</h3>
-                    <p class="notice-content">Parent-Teacher Meeting scheduled for December 23, 2024, from 9:00 AM to 1:00 PM. All parents are requested to attend.</p>
-                </div>
-                <div class="notice-item">
-                    <div class="notice-date">Dec 10, 2024</div>
-                    <h3 class="notice-title">Annual Sports Day</h3>
-                    <p class="notice-content">Annual Sports Day will be held on January 15, 2025. Students are encouraged to participate in various sporting events.</p>
-                </div>
-                <div class="notice-item">
-                    <div class="notice-date">Dec 5, 2024</div>
-                    <h3 class="notice-title">Admission Open for 2025-26</h3>
-                    <p class="notice-content">Admissions are now open for the academic year 2025-26. Application forms available online and at the school office.</p>
-                </div>
-                <div class="notice-item">
-                    <div class="notice-date">Nov 28, 2024</div>
-                    <h3 class="notice-title">Cultural Festival Announcement</h3>
-                    <p class="notice-content">Annual Cultural Festival "Sanskritik Utsav" will be celebrated on February 20-21, 2025. Stay tuned for more details.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+   <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="footer-title">Gurukul</h3>
-                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -92,25 +97,25 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>

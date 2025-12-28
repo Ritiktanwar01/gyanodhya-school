@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.P.S Admin | Dashboard</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <!-- Add mobile menu toggle button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Add sidebar overlay for mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" class="active">Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Overview</h1>
+                <div class="user-profile">Admin User</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="card stat-card">
+                    <div class="label">Total Blogs</div>
+                    <div class="value">24</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="label">Pending Admissions</div>
+                    <div class="value">12</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="label">New Queries</div>
+                    <div class="value">08</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="label">Notices Active</div>
+                    <div class="value">05</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Recent Admissions</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Literature 101</td>
+                            <td>Oct 24, 2025</td>
+                            <td>Pending</td>
+                            <td>
+                                <a href="admin/admission-view" class="btn btn-outline">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mark Wilson</td>
+                            <td>Advanced Physics</td>
+                            <td>Oct 23, 2025</td>
+                            <td>Approved</td>
+                            <td>
+                                <a href="admin/admission-view" class="btn btn-outline">View</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

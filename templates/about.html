@@ -8,12 +8,34 @@
 </head>
 <body>
     <!-- Header -->
+     <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -27,11 +49,11 @@
                     <li><a href="about" class="active">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                    {% comment %} <li><a href="blog">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment %}
                 </ul>
             </nav>
         </div>
@@ -40,7 +62,7 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1 class="page-title">About Gurukul</h1>
+            <h1 class="page-title">About Gyanodaya Public School</h1>
             <p class="page-subtitle">Where tradition meets innovation in education</p>
         </div>
     </section>
@@ -51,44 +73,34 @@
             <div class="about-grid">
                 <div class="about-text">
                     <h2 class="content-title">Our Story</h2>
-                    <p>Founded in 1998, Gurukul has been at the forefront of providing quality education that blends traditional values with modern teaching methodologies. Our institution was born from a vision to create a learning environment where students are not just educated, but truly nurtured into becoming well-rounded individuals.</p>
-                    <p>Over the past 25 years, we have grown from a small school with 50 students to a prestigious institution serving over 2000 students annually. Our journey has been marked by consistent academic excellence, character development, and a commitment to preparing students for the challenges of tomorrow.</p>
+                    <p>{{data.our_story_1}}</p>
+                    <p>{{data.our_story_1}}</p>
                 </div>
                 <div class="about-image">
-                    <img src="/static/images/about-school.jpg" alt="School Building">
+                    <img src="/media/{{data.about_image}}" alt="School Building">
                 </div>
             </div>
 
             <div class="mission-vision">
                 <div class="mv-card">
                     <h3>Our Mission</h3>
-                    <p>To provide holistic education that nurtures intellectual curiosity, moral values, and social responsibility, preparing students to be compassionate leaders and lifelong learners.</p>
+                    <p>{{data.our_mission}}</p>
                 </div>
                 <div class="mv-card">
                     <h3>Our Vision</h3>
-                    <p>To be recognized as a premier educational institution that seamlessly integrates ancient wisdom with contemporary knowledge, fostering global citizens rooted in cultural values.</p>
+                    <p>{{data.our_vision}}</p>
                 </div>
             </div>
 
             <div class="values-section">
                 <h2 class="section-title">Our Core Values</h2>
                 <div class="values-grid">
-                    <div class="value-item">
-                        <h4>Excellence</h4>
-                        <p>Commitment to the highest standards in education and character development</p>
+                    {% for value in values %}
+                        <div class="value-item">
+                        <h4>{{value.title}}</h4>
+                        <p>{{value.message}}</p>
                     </div>
-                    <div class="value-item">
-                        <h4>Integrity</h4>
-                        <p>Fostering honesty, transparency, and ethical behavior in all endeavors</p>
-                    </div>
-                    <div class="value-item">
-                        <h4>Respect</h4>
-                        <p>Valuing diversity and promoting mutual respect among all members</p>
-                    </div>
-                    <div class="value-item">
-                        <h4>Innovation</h4>
-                        <p>Embracing creativity and progressive teaching-learning methodologies</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -99,8 +111,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="footer-title">Gurukul</h3>
-                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -108,25 +121,25 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>

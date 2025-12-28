@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices" class="active">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Announcements & Notices</h1>
+                <a href="notice-create.html" class="btn btn-primary">Create Notice</a>
+            </div>
+
+            <div class="card">
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Notice Title</th>
+                                <th>Target Audience</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Winter Break Schedule 2025</td>
+                                <td>All Students</td>
+                                <td>Dec 20, 2025</td>
+                                <td><span class="badge badge-active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="notice-view.html" class="btn btn-outline">View</a>
+                                        <a href="notice-edit.html" class="btn btn-outline">Edit</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Scholarship Applications Open</td>
+                                <td>Undergraduates</td>
+                                <td>Nov 15, 2025</td>
+                                <td><span class="badge badge-active">Active</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="notice-view.html" class="btn btn-outline">View</a>
+                                        <a href="notice-edit.html" class="btn btn-outline">Edit</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

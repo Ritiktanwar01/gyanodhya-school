@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Gallery | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+               <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery" class="active">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Gallery Management</h1>
+                <a href="gallery-create.html" class="btn btn-primary">Add New Image</a>
+            </div>
+
+            <div class="card">
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Preview</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Upload Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/placeholder.svg?height=50&width=50" alt="Preview" style="border-radius: 4px;"></td>
+                                <td>Annual Sports Day</td>
+                                <td>Events</td>
+                                <td>Oct 10, 2025</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="gallery-view.html" class="btn btn-outline">View</a>
+                                        <a href="gallery-edit.html" class="btn btn-outline">Edit</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/placeholder.svg?height=50&width=50" alt="Preview" style="border-radius: 4px;"></td>
+                                <td>New Library Wing</td>
+                                <td>Infrastructure</td>
+                                <td>Oct 05, 2025</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="gallery-view.html" class="btn btn-outline">View</a>
+                                        <a href="gallery-edit.html" class="btn btn-outline">Edit</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Admission | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions" class="active">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Edit Admission</h1>
+                <a href="admissions.html" class="btn btn-outline">Back</a>
+            </div>
+
+            <div class="card">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Student Full Name</label>
+                        <input type="text" id="name" class="form-control" value="Jane Doe Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" value="jane.smith@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select id="course" class="form-control">
+                            <option value="Literature" selected>B.A. Literature</option>
+                            <option value="Physics">Advanced Physics</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Mathematics">Mathematics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Admission Status</label>
+                        <select id="status" class="form-control">
+                            <option value="pending" selected>Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Admin Remarks</label>
+                        <textarea id="remarks" class="form-control">Currently reviewing the transcript provided. Awaiting final confirmation from the department.</textarea>
+                    </div>
+                    <div class="action-buttons">
+                        <button type="submit" class="btn btn-primary">Update Admission</button>
+                        <a href="admission-view.html" class="btn btn-outline">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

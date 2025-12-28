@@ -8,12 +8,34 @@
 </head>
 <body>
     <!-- Header -->
+      <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile">+91<span class="m-2">7027506275</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile">+91<span class="m-2">7027506275</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="#"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="#"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="#"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -27,11 +49,11 @@
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                    {% comment %} <li><a href="blog">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni" class="active">Alumni</a></li>
+                    {% comment %} <li><a href="alumni" class="active">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment %}
                 </ul>
             </nav>
         </div>

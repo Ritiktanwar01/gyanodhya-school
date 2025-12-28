@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queries | Academic Admin</title>
+   <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries" class="active">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Contact Queries</h1>
+            </div>
+
+            <div class="card">
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>Subject</th>
+                                <th>Received At</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark Spencer</td>
+                                <td>Admission Process Query</td>
+                                <td>2 hours ago</td>
+                                <td><span class="badge badge-pending">New</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="query-view.html" class="btn btn-outline">View</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Parker</td>
+                                <td>Fee Structure Details</td>
+                                <td>1 day ago</td>
+                                <td><span class="badge badge-resolved">Resolved</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="query-view.html" class="btn btn-outline">View</a>
+                                        <button class="btn btn-danger btn-delete">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

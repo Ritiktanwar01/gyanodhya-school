@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post - Gyanodhya Public School</title>
+    <title>Blog Post - Gyanodaya Public School</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+    <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social"
+                            src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social"
+                            src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social"
+                            src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -23,15 +50,15 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" >Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog" class="active">Blog</a></li>
+                    {% comment %} <li><a href="blog" class="active">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment%}
                 </ul>
             </nav>
         </div>
@@ -54,7 +81,35 @@
         <div class="container">
             <div class="blog-detail-container">
                 <article class="blog-detail-content" id="blogDetailContent">
-                    <!-- Content will be loaded by JavaScript -->
+                    <div class="blog-detail-header">
+                        <img src="/media/{{post.image}}" alt="{{blog.title}}">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> {{blog.date_time}}</span>
+                            <span><i class="fas fa-user"></i> {{blog.title}}</span>
+                            <span><i class="fas fa-folder"></i> {{blog.catigory}}</span>
+                        </div>
+                        <h1>{{blog.title}}</h1>
+                    </div>
+                    <div class="blog-detail-body">
+                        <p class="lead">{{post.headline}}</p>
+                      {{post.descreption}}
+                        <div class="blog-tags">
+                            <strong>Tags:</strong>
+                            <span class="tag">Education</span>
+                            <span class="tag">{{post.headline}}</span>
+                            <span class="tag">School</span>
+                        </div>
+                        <div class="blog-share">
+                            <strong>Share this post:</strong>
+                            <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="share-btn"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-navigation">
+                        <a href="blog" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+                    </div>
                 </article>
 
                 <aside class="blog-sidebar">
@@ -79,9 +134,9 @@
                     <div class="sidebar-widget">
                         <h3>Quick Contact</h3>
                         <div class="quick-contact">
-                            <p><i class="fas fa-phone"></i> +91 98932-08095</p>
-                            <p><i class="fas fa-phone"></i> +91 81318-87047</p>
-                            <p><i class="fas fa-envelope"></i> info@Gyanodhyapublicschool.com</p>
+                            <p><i class="fas fa-phone"></i> {{maindata.mobile_primary}}</p>
+                            <p><i class="fas fa-phone"></i> {{maindata.mobile_secondary}}</p>
+                            <p><i class="fas fa-envelope"></i> {{maindata.email_secondary}}</p>
                             <a href="contact" class="btn-primary">Contact Us</a>
                         </div>
                     </div>
@@ -90,43 +145,46 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Gyanodhya Public School</h3>
-                    <p>We teach with love and care, developing body, mind & soul. A place for holistic education from Nursery to Class 8th.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="notice">Notice Board</a></li>
+                        <li><a href="contact">Contact Us</a></li>
                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Housing Board Colony, Dondekhurd, Raipur</p>
-                    <p><i class="fas fa-phone"></i> +91 98932-08095</p>
-                    <p><i class="fas fa-phone"></i> +91 81318-87047</p>
-                    <p><i class="fas fa-envelope"></i> info@Gyanodhyapublicschool.com</p>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact</h4>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}},
+                        {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gyanodhya Public School. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>
 
     <script src="/static/js/main.js"></script>
-    <script src="/static/js/blog-detail.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Gallery Item | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery" class="active">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Image Details</h1>
+                <div class="action-buttons">
+                    <a href="gallery-edit.html" class="btn btn-primary">Edit Image</a>
+                    <a href="gallery.html" class="btn btn-outline">Back</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="/placeholder.svg?height=400&width=600" alt="Gallery Preview" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--color-border);">
+                </div>
+                <div class="info-group" style="margin-bottom: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem;">Annual Sports Day</h3>
+                    <p style="color: var(--color-gray); margin-bottom: 1rem;">Category: <span class="badge badge-active">Events</span></p>
+                    <p><strong>Upload Date:</strong> Oct 10, 2025</p>
+                </div>
+                <div class="content-body">
+                    <p>Capturing the excitement and energy of our students during the annual sports meet 2025. This gallery item includes highlights from the track events and opening ceremony.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

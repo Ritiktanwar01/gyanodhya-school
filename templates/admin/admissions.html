@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- added mobile menu toggle button and overlay for responsiveness -->
+        <button class="mobile-menu-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions" class="active">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Admissions Management</h1>
+                <a href="admission-create.html" class="btn btn-primary">Manual Entry</a>
+            </div>
+
+            <div class="card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Applied Course</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>jane@example.com</td>
+                            <td>BA Literature</td>
+                            <td>Pending</td>
+                            <td>
+                                <a href="admission-view.html" class="btn btn-outline">View</a>
+                                <a href="admission-edit.html" class="btn btn-outline">Edit</a>
+                                <button class="btn btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Robert Frost</td>
+                            <td>frost@poetry.com</td>
+                            <td>Creative Writing</td>
+                            <td>Approved</td>
+                            <td>
+                                <a href="admission-view.html" class="btn btn-outline">View</a>
+                                <a href="admission-edit.html" class="btn btn-outline">Edit</a>
+                                <button class="btn btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

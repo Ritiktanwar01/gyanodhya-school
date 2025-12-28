@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blog Post | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs" class="active">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Blog Details</h1>
+                <div class="action-buttons">
+                    <a href="blog-edit.html" class="btn btn-primary">Edit Post</a>
+                    <a href="blogs.html" class="btn btn-outline">Back</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <article class="blog-preview">
+                    <div class="blog-header" style="margin-bottom: 2rem;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">The Future of Classical Education</h2>
+                        <div class="blog-meta" style="color: var(--color-gray); font-size: 0.9rem;">
+                            <span>By <strong>Dr. Emily Brown</strong></span> | 
+                            <span>Published on Oct 20, 2025</span> | 
+                            <span class="badge badge-active">Education</span>
+                        </div>
+                    </div>
+                    <div class="blog-image" style="margin-bottom: 2rem; text-align: center;">
+                        <img src="/placeholder.svg?height=400&width=800" alt="Blog Featured Image" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <div class="blog-content" style="font-size: 1.1rem; line-height: 1.8;">
+                        <p style="margin-bottom: 1.5rem;">The landscape of education is shifting, yet the foundational principles of classical learning remain more relevant than ever. In this post, we explore how traditional methods can be integrated with modern technology to create a robust curriculum for the 21st century.</p>
+                        <p style="margin-bottom: 1.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <h3 style="margin-top: 2rem;">The Role of Logic and Rhetoric</h3>
+                        <p style="margin-bottom: 1.5rem;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

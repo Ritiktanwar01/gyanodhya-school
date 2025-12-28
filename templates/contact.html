@@ -8,12 +8,34 @@
 </head>
 <body>
     <!-- Header -->
+   <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -23,15 +45,15 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/" >Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                    {% comment %} <li><a href="blog" class="active">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact" class="active">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment %}
                 </ul>
             </nav>
         </div>
@@ -58,28 +80,30 @@
                             <div class="contact-icon">📍</div>
                             <div class="contact-text">
                                 <h4>Address</h4>
-                                <p>123 Education Street<br>City, State 12345<br>India</p>
+                                <p>{{contact.street}}<br>{{contact.city}}, {{contact.state}} {{contact.pincode}}<br>India</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">📞</div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
-                                <p>+91 98765 43210<br>+91 98765 43211</p>
+                                <p>{{contact.mobile_primary}}<br>{{contact.mobile_secondary}}</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">✉️</div>
                             <div class="contact-text">
                                 <h4>Email</h4>
-                                <p>info@gurukul.edu<br>admissions@gurukul.edu</p>
+                                <p>{{contact.email_primary}}<br>{{contact.email_secondary}}</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">🕐</div>
                             <div class="contact-text">
                                 <h4>Office Hours</h4>
-                                <p>Monday - Friday: 8:00 AM - 4:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                                {% for hours in office_hours %}
+                                <p>{{hours.day}}: {{hours.timing}}</p>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -87,7 +111,8 @@
 
                 <div class="contact-form-wrapper">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" method="post" action="contact">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -121,9 +146,8 @@
     <section class="map-section">
         <div class="container">
             <h2 class="section-title">Find Us Here</h2>
-            <div class="map-placeholder">
-                <p>📍 123 Education Street, City, State 12345</p>
-                <p style="margin-top: 10px; color: #666; font-size: 14px;">Map integration can be added using Google Maps API</p>
+            <div class="map-placeholder" id="mapHolder">
+                <iframe src="{{contact.map_link}}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -133,8 +157,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="footer-title">Gurukul</h3>
-                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -142,30 +167,28 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>
-
     <script src="/static/js/main.js"></script>
-    <script src="/static/js/contact.js"></script>
 </body>
 </html>

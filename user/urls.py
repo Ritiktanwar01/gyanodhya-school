@@ -12,7 +12,7 @@ urlpatterns = [
     path("admissions",addmission),
     path("gallery",gallery),
     path("blog",blog),
-    path("blogdetail",blogDetail),
+    path("blog-detail/<int:id>",blogDetail),
     path("notice",notice),
     path("alumni",alumni),
     

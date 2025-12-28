@@ -8,12 +8,34 @@
 </head>
 <body>
     <!-- Header -->
+      <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -22,16 +44,16 @@
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu" id="navMenu">
+                 <ul class="nav-menu" id="navMenu">
                     <li><a href="/" >Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a class="active" href="admissions">Admissions</a></li>
+                    <li><a href="about" >About</a></li>
+                    <li><a href="admissions" class="active">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog">Blog</a></li>
+                 
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                   
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -52,32 +74,25 @@
                 <div class="info-card">
                     <h3>Admission Process</h3>
                     <ol>
-                        <li>Submit online application form</li>
-                        <li>Initial screening and review</li>
-                        <li>Entrance test (for grades 6 and above)</li>
-                        <li>Parent-student interaction</li>
-                        <li>Admission confirmation</li>
+                        {% for process in addmission_process %}
+                        <li>{{process.text}}</li>
+                        {% endfor %}
                     </ol>
                 </div>
                 <div class="info-card">
                     <h3>Required Documents</h3>
                     <ul>
-                        <li>Birth certificate</li>
-                        <li>Previous school records</li>
-                        <li>Transfer certificate (if applicable)</li>
-                        <li>Medical records</li>
-                        <li>Passport-size photographs</li>
-                        <li>Address proof</li>
+                        {% for doc in documents %}
+                        <li>{{doc.text}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="info-card">
                     <h3>Important Dates</h3>
                     <ul>
-                        <li><strong>Application Start:</strong> December 1, 2024</li>
-                        <li><strong>Application End:</strong> February 28, 2025</li>
-                        <li><strong>Entrance Test:</strong> March 15-20, 2025</li>
-                        <li><strong>Results:</strong> March 30, 2025</li>
-                        <li><strong>Session Start:</strong> April 10, 2025</li>
+                        {% for date in important_dates %}
+                        <li><strong>{{date.tittle}}:</strong> {{date.text}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -89,7 +104,8 @@
         <div class="container">
             <div class="form-wrapper">
                 <h2 class="form-title">Application Form</h2>
-                <form id="admissionForm" class="admission-form">
+                <form id="admissionForm" class="admission-form" method="post" action="admissions">
+                     {% csrf_token %}
                     <div class="form-section">
                         <h3 class="form-section-title">Student Information</h3>
                         <div class="form-row">
@@ -197,8 +213,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="footer-title">Gurukul</h3>
-                    <p class="footer-text">Empowering future leaders through quality education and traditional values</p>
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -206,25 +223,25 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-contact">123 Education Street<br>City, State 12345<br>Phone: +91 98765 43210<br>Email: info@gurukul.edu</p>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gurukul. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>

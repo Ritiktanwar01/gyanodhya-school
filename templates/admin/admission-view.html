@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Admission | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+    <style>
+        .detail-row {
+            display: flex;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .detail-label {
+            width: 200px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .detail-value {
+            flex: 1;
+        }
+        @media (max-width: 600px) {
+            .detail-row {
+                flex-direction: column;
+            }
+            .detail-label {
+                width: 100%;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Added mobile menu toggle and overlay -->
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions" class="active">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Admission Details</h1>
+                <div class="action-buttons">
+                    <a href="admission-edit.html" class="btn btn-primary">Edit Details</a>
+                    <a href="admissions.html" class="btn btn-outline">Back</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="detail-row">
+                    <div class="detail-label">Status</div>
+                    <div class="detail-value"><span class="badge badge-pending">Pending</span></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Full Name</div>
+                    <div class="detail-value">Jane Doe Smith</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Email Address</div>
+                    <div class="detail-value">jane.smith@example.com</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Phone Number</div>
+                    <div class="detail-value">+1 (555) 000-1234</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Course Applied</div>
+                    <div class="detail-value">Bachelor of Arts in Literature</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Submission Date</div>
+                    <div class="detail-value">October 24, 2025</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Statement of Purpose</div>
+                    <div class="detail-value">"I am deeply passionate about classical literature and hope to contribute to the academic community through rigorous study and research..."</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

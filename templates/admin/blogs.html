@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Blogs | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- added mobile menu toggle button and overlay for responsiveness -->
+        <button class="mobile-menu-toggle" id="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs" class="active">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Blog Management</h1>
+                <a href="blog-create.html" class="btn btn-primary">Add New Post</a>
+            </div>
+
+            <div class="card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Date Published</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Future of Classical Education</td>
+                            <td>Dr. Emily Brown</td>
+                            <td>Oct 20, 2025</td>
+                            <td>Published</td>
+                            <td>
+                                <a href="blog-view.html" class="btn btn-outline">View</a>
+                                <a href="blog-edit.html" class="btn btn-outline">Edit</a>
+                                <button class="btn btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Integrating Tech in the Library</td>
+                            <td>Sarah Johnson</td>
+                            <td>Oct 15, 2025</td>
+                            <td>Draft</td>
+                            <td>
+                                <a href="blog-view.html" class="btn btn-outline">View</a>
+                                <a href="blog-edit.html" class="btn btn-outline">Edit</a>
+                                <button class="btn btn-danger btn-delete">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Notice | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices" class="active">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Create Announcement</h1>
+                <a href="notices.html" class="btn btn-outline">Back</a>
+            </div>
+
+            <div class="card">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Notice Title</label>
+                        <input type="text" id="title" class="form-control" placeholder="Enter title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="audience">Target Audience</label>
+                        <select id="audience" class="form-control">
+                            <option value="All">All Students & Staff</option>
+                            <option value="Students">Students Only</option>
+                            <option value="Staff">Staff Only</option>
+                            <option value="Faculty">Faculty Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="date" id="expiry" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Announcement Content</label>
+                        <textarea id="content" class="form-control" rows="8" placeholder="Enter notice details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="attachment">Attachment (Optional)</label>
+                        <input type="file" id="attachment" class="form-control">
+                    </div>
+                    <div class="action-buttons">
+                        <button type="submit" class="btn btn-primary">Post Announcement</button>
+                        <a href="notices.html" class="btn btn-outline">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

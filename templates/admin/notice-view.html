@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Notice | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices" class="active">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Announcement Details</h1>
+                <div class="action-buttons">
+                    <a href="notice-edit.html" class="btn btn-primary">Edit Notice</a>
+                    <a href="notices.html" class="btn btn-outline">Back</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="notice-header" style="margin-bottom: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Winter Break Schedule 2025</h2>
+                    <div class="meta" style="color: var(--color-gray); font-size: 0.9rem;">
+                        <span>Target: <strong>All Students</strong></span> | 
+                        <span>Expires: Dec 20, 2025</span> | 
+                        <span class="badge badge-active">Active</span>
+                    </div>
+                </div>
+                <div class="notice-body" style="font-size: 1.1rem; line-height: 1.8;">
+                    <p>Dear Students and Staff,</p>
+                    <p style="margin-top: 1rem;">This is to inform you that the institute will remain closed for Winter Break from December 22, 2025, to January 5, 2026. All academic activities will resume from January 6, 2026.</p>
+                    <p style="margin-top: 1rem;">The library and administrative offices will operate on a limited schedule during this period. Please check the attachment for detailed office timings.</p>
+                </div>
+                <div class="notice-attachments" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                    <p><strong>Attachments:</strong></p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 0.5rem;">winter_schedule_2025.pdf</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>

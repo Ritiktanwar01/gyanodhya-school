@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Gyanodhya Public School</title>
+    <title>Blog - Gyanodaya Public School</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <!-- Header -->
+      <div class="bg-secondary" id="header-sm">
+        <nav class="nav-2">
+            <div class="logo flex-c">
+                <!-- Updated logo path and school name -->
+                <!-- <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
+                        class="logo-img"> -->
+                <!-- <span class="logo-text">G.P.S.</span> -->
+                <img class="image-Icon-social" src="/static/public/icons/phone.png" alt=""></a>
+                <div class="text-sec">
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_primary}}</span></p>
+                    <!-- <p class="text-mobile"> </span></p>
+                    <p class="text-mobile">,</span></p> -->
+                    <p class="text-mobile"><span class="m-2">{{maindata.mobile_secondary}}</span></p>
+                </div>
+            </div>
+            <ul class="top-header">
+                <li><a href="{{maindata.youtube}}"><img class="image-Icon-social" src="/static//public/icons/youtube.png" alt=""></a></li>
+                <li><a href="{{maindata.instagram}}"><img class="image-Icon-social" src="/static//public/icons/insta.png" alt=""></a></li>
+                <li><a href="{{maindata.facebook}}"><img class="image-Icon-social" src="/static//public/icons/facebook.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">
                     <!-- Updated logo path and school name -->
-                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodhya Public School Logo"
+                    <img src="/static/public/images/logo-removebg-preview.png" alt="Gyanodaya Public School Logo"
                         class="logo-img">
                     <span class="logo-text">G.P.S.</span>
                 </div>
@@ -27,11 +49,11 @@
                     <li><a href="about">About</a></li>
                     <li><a href="admissions">Admissions</a></li>
                     <li><a href="gallery">Gallery</a></li>
-                    <li><a href="blog" class="active">Blog</a></li>
+                    {% comment %} <li><a href="blog" class="active">Blog</a></li> {% endcomment %}
                     <li><a href="notice">Notice</a></li>
-                    <li><a href="alumni">Alumni</a></li>
+                    {% comment %} <li><a href="alumni">Alumni</a></li> {% endcomment %}
                     <li><a href="contact">Contact</a></li>
-                    <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li>
+                    {% comment %} <li><a href="#" class="btn-get-quote" id="getQuote">Get Quote</a></li> {% endcomment %}
                 </ul>
             </nav>
         </div>
@@ -49,85 +71,22 @@
     <!-- Hardcoded blog posts instead of loading from localStorage -->
     <section class="blog-section">
         <div class="container">
+            {% for blog in blogs %}
             <div class="blog-grid">
                 <div class="blog-card">
-                    <img src="/static/public/science-exhibition.png" alt="Annual Science Exhibition 2024" class="blog-image">
+                    <img src="/media/{{blog.image}}" alt="Annual Science Exhibition 2024" class="blog-image">
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span>📅 Dec 15, 2024</span>
-                            <span>✍️ Dr. Rajesh Kumar</span>
+                            <span>📅 {{blog.date_time}}</span>
+                            <span>✍️ {{blog.Author_name}}</span>
                         </div>
-                        <h3 class="blog-title">Annual Science Exhibition 2024</h3>
-                        <p class="blog-excerpt">Our students showcased incredible innovation and creativity at the Annual Science Exhibition. From robotics to sustainable energy projects, the event was a testament to our commitment to STEM education.</p>
-                        <a href="blog-detail?id=1" class="blog-link">Read More →</a>
+                        <h3 class="blog-title">{{blog.title}}</h3>
+                        <p class="blog-excerpt">{{blog.headline}}</p>
+                        <a href="blog-detail/{{blog.id}}" class="blog-link">Read More →</a>
                     </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="/static/public/parent-teacher-meeting-school.jpg" alt="Parent-Teacher Meeting Highlights" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>📅 Dec 10, 2024</span>
-                            <span>✍️ Mrs. Priya Sharma</span>
-                        </div>
-                        <h3 class="blog-title">Parent-Teacher Meeting Highlights</h3>
-                        <p class="blog-excerpt">The recent parent-teacher meeting was highly productive with insightful discussions about student progress and new teaching methodologies we're implementing this semester.</p>
-                        <a href="blog-detail?id=2" class="blog-link">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="/static/public/children-doing-yoga-school.jpg" alt="Wellness Program Launch" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>📅 Dec 5, 2024</span>
-                            <span>✍️ Yoga Instructor Team</span>
-                        </div>
-                        <h3 class="blog-title">Wellness Program Launch</h3>
-                        <p class="blog-excerpt">We've launched a comprehensive wellness program including yoga, meditation, and physical fitness activities to promote holistic development of our students.</p>
-                        <a href="blog-detail?id=3" class="blog-link">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="/static/public/students-celebrating-success.jpg" alt="Academic Excellence Achievements" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>📅 Nov 28, 2024</span>
-                            <span>✍️ Academic Coordinator</span>
-                        </div>
-                        <h3 class="blog-title">Academic Excellence Achievements</h3>
-                        <p class="blog-excerpt">Celebrating our students' outstanding performance in board examinations with 98% pass rate and 45 students scoring above 90%.</p>
-                        <a href="blog-detail?id=4" class="blog-link">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="/static/public/school-classroom-students-learning.jpg" alt="New Interactive Learning Methods" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>📅 Nov 20, 2024</span>
-                            <span>✍️ Teaching Staff</span>
-                        </div>
-                        <h3 class="blog-title">New Interactive Learning Methods</h3>
-                        <p class="blog-excerpt">We've introduced smart classrooms with interactive boards and digital learning tools to enhance student engagement and understanding.</p>
-                        <a href="blog-detail?id=5" class="blog-link">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <img src="/static/public/school-library-students-reading.jpg" alt="Library Expansion & New Books" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span>📅 Nov 15, 2024</span>
-                            <span>✍️ Librarian</span>
-                        </div>
-                        <h3 class="blog-title">Library Expansion & New Books</h3>
-                        <p class="blog-excerpt">Our library has been expanded with over 2,000 new books covering various subjects, fiction, and reference materials for comprehensive learning.</p>
-                        <a href="blog-detail?id=6" class="blog-link">Read More →</a>
-                    </div>
-                </div>
+                </div>    
             </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -136,8 +95,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 class="footer-title">Gyanodhya Public School</h3>
-                    <p class="footer-text">We teach with love & care - Developing body, mind & soul</p>
+                    <!-- Updated footer with school branding -->
+                    <h3 class="footer-title">{{maindata.school_name}}</h3>
+                    <p class="footer-text">{{maindata.footer_quote}}</p>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
@@ -145,25 +105,25 @@
                         <li><a href="about">About Us</a></li>
                         <li><a href="admissions">Admissions</a></li>
                         <li><a href="gallery">Gallery</a></li>
-                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="notice">Notice Board</a></li>
-                        <li><a href="alumni">Alumni</a></li>
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="admin">Admin Panel</a></li>
+                         <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Contact</h4>
-                    <p class="footer-contact">Housing Board Colony<br>Dondekhurd, Raipur<br>Phone: 98932-08095<br>Phone: 91318-97047<br>Phone: 83494-30562</p>
+                    <!-- Updated contact information -->
+                    <p class="footer-contact">{{maindata.street}}<br>{{maindata.city}}, {{maindata.state}}, {{maindata.pincode}}<br>Phone: {{maindata.mobile_primary}}
+                        <br>Phone: {{maindata.mobile_secondary}}<br>Email: {{maindata.email_primary}}</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gyanodhya Public School. All rights reserved.</p>
+                <p>&copy; 2025 Gyanodaya Public School. All rights reserved. </p>
             </div>
         </div>
     </footer>

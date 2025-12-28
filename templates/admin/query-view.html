@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Query | Academic Admin</title>
+    <link rel="stylesheet" href="/static/css/admin/globals.css">
+    <style>
+        .query-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .info-item label {
+            display: block;
+            color: var(--color-gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .info-item span {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .message-content {
+            background-color: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Panel</div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li class="nav-item"><a href="/admin/dashboard" >Dashboard</a></li>
+                    <li class="nav-item"><a href="/admin/blogs">Blogs</a></li>
+                    <li class="nav-item"><a href="/admin/admissions">Admissions</a></li>
+                    <li class="nav-item"><a href="/admin/gallery">Gallery</a></li>
+                    <li class="nav-item"><a href="/admin/notices">Notices</a></li>
+                    <li class="nav-item"><a href="/admin/queries" class="active">Queries</a></li>
+                    <li class="nav-item"><a href="/admin/settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Query Details</h1>
+                <a href="queries.html" class="btn btn-outline">Back to List</a>
+            </div>
+
+            <div class="card">
+                <div class="query-info">
+                    <div class="info-item">
+                        <label>Sender</label>
+                        <span>Mark Spencer</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <span>mark.spencer@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Received</label>
+                        <span>Oct 25, 2025, 10:45 AM</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Status</label>
+                        <span class="badge badge-pending">New Query</span>
+                    </div>
+                </div>
+
+                <div class="query-subject">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Subject: Admission Process Query</h2>
+                </div>
+
+                <div class="message-content">
+Dear Admissions Office,
+
+I am writing to inquire about the specific documentation required for the B.A. Literature program for the upcoming semester. Could you please clarify if a physical copy of the transcript is needed, or if a digital upload is sufficient for the initial review?
+
+Thank you for your assistance.
+
+Best regards,
+Mark Spencer
+                </div>
+
+                <div class="reply-section">
+                    <h3>Reply to Query</h3>
+                    <form style="margin-top: 1rem;">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="6" placeholder="Type your response here..."></textarea>
+                        </div>
+                        <div class="action-buttons">
+                            <button type="submit" class="btn btn-primary">Send Reply</button>
+                            <button type="button" class="btn btn-secondary">Mark as Resolved</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/admin/main.js"></script>
+</body>
+</html>
